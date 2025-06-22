@@ -4,6 +4,7 @@
   padding: 20px;
   background: $backgroundColor;
   border-radius: $borderRadius;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
 
   .title {
     display: flex;
@@ -15,5 +16,19 @@
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    .prefecture {
+      display: flex;
+      align-items: center;
+      padding: 0px 20px;
+      background: rgba(0, 0, 0, 0.05);
+      height: 30px;
+      border-radius: 10px;
+      width: 150px;
+      cursor: pointer;
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.04);
+      }
+    }
   }
 }

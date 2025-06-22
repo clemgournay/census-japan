@@ -14,7 +14,7 @@ export default async function PrefectureSelection() {
       <div className={styles.prefectures}>
         {prefectures.map((prefecture: Prefecture) => {
           return (
-            <div key={prefecture.prefCode}>{prefecture.prefName}</div>
+            <div key={prefecture.prefCode} className={styles.prefecture}>{prefecture.prefName}</div>
           )
         })}
       </div>
