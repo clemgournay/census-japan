@@ -1,5 +1,8 @@
 export type ChartItem = {
+  [key: string]: string | number;
+};
+
+export type ChartYear = {
   year: number;
-  value: number;
-  rate: number;
-}
+  keys: Array<string>;
+};

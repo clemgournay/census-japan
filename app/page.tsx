@@ -1,8 +1,9 @@
 import PrefectureSelection from '@components/prefecture-selection/prefecture-selection';
+import PrefectureSelectionSkeleton from '@components/prefecture-selection/prefecture-selection-skeleton';
+import ChartViewer from '@components/chart-viewer/chart-viewer';
 
 import styles from './page.module.scss';
 import { Suspense } from 'react';
-import PrefectureSelectionSkeleton from './components/prefecture-selection/prefecture-selection-skeleton';
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <Suspense fallback={<PrefectureSelectionSkeleton />}>
         <PrefectureSelection />
       </Suspense>
+      <ChartViewer />
     </main>
   );
 }

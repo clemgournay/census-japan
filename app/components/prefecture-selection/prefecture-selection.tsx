@@ -1,6 +1,10 @@
+// Models
 import { Prefecture } from '@models/prefecture'
+
+// Services
 import { PrefectureService } from '@services/prefecture';
 
+// Styles
 import styles from './prefecture-selection.module.scss';
 
 export default async function PrefectureSelection() {

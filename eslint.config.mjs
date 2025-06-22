@@ -17,15 +17,15 @@ const eslintConfig = [
   ...compat.extends('next/core-web-vitals', 'next/typescript'),
   {
     rules: {
-      quotes: [2, 'single'],
-      indent: ['error', 2],
+      'quotes': [2, 'single'],
+      'indent': ['error', 2],
+      'semi-style': ['error', 'last'],
+      'space-before-function-paren': ['error', 'always'],
       '@typescript-eslint/naming-convention': [
         'error',
         {
-          selector: 'function',
-          format: [
-            'StrictPascalCase'
-          ]
+          'selector': 'function',
+          'format': ['StrictPascalCase']
         },
       ]
     }

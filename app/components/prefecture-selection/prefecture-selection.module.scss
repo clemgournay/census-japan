@@ -1,21 +1,23 @@
 @use '../../styles/theme.scss' as *;
 
 .card {
-  padding: 20px;
   background: $backgroundColor;
   border-radius: $borderRadius;
-  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: $cardShadow;
 
   .title {
     display: flex;
     height: 50px;
+    padding: 0px 20px;
     align-items: center;
   }
 
   .prefectures {
+    padding: 20px;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    
     .prefecture {
       display: flex;
       align-items: center;
