@@ -30,7 +30,7 @@ export class PopulationService {
   async fetchCompositionByPrefs(codes: Array<number> = []): Promise<Array<PopulationComposition>> {
     const fetchList = [];
     if (codes.length > 0) {
-      for (let code of codes) {
+      for (const code of codes) {
         fetchList.push(this.fetchCompositionByPref(code));
       }
     }

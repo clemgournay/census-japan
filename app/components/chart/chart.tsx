@@ -4,15 +4,16 @@ import { useEffect, useState } from 'react';
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 // Models
-import { ChartItem, ChartYear } from '@models/chart';
-import { GetYears } from '@/app/utils/chart';
+import { ChartItem } from '@models/chart';
+import { Prefecture } from '@/app/models/prefecture';
 
 
 type Props = {
-  items: Array<ChartItem>
+  items: Array<ChartItem>;
+  prefectures: Array<Prefecture>;
 }
 
-export default function Chart({items}: Props) {
+export default function Chart({items, prefectures}: Props) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -37,22 +38,20 @@ export default function Chart({items}: Props) {
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" padding={{ left: 20, right: 20 }} />
+        <XAxis dataKey="name" padding={{left: 20, right: 20}} />
         <YAxis />
         <Tooltip />
         <Legend />
-        {GetYears(items).map((year: ChartYear, i: number) => {
-          return year.keys.map((key: string, j: number) => {
-            return (
-              <Line
-                type="monotone"
-                dataKey={key}
-                stroke="#8884d8"
-                name={year.year}
-                activeDot={{ r: 8 }}
-              />
-            )
-          });
+        {prefectures.map((prefecture: Prefecture) => {
+          return (
+            <Line key={prefecture.prefCode}
+              type="monotone"
+              dataKey={`pref${prefecture.prefCode}`}
+              stroke="#8884d8"
+              name={prefecture.prefName}
+              activeDot={{r: 8}}
+            />
+          )
         })}
         
       </LineChart>

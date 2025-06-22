@@ -20,7 +20,7 @@ const eslintConfig = [
       'quotes': [2, 'single'],
       'indent': ['error', 2],
       'semi-style': ['error', 'last'],
-      'space-before-function-paren': ['error', 'always'],
+      'space-before-function-paren': ['error', 'never'],
       '@typescript-eslint/naming-convention': [
         'error',
         {

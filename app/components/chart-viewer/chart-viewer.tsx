@@ -9,9 +9,6 @@ import ChartViewerSkeleton from './chart-viewer-skeleton';
 import { PopulationService } from '@services/population';
 import { PrefectureService } from '@services/prefecture';
 
-// Models
-import { Prefecture } from '@models/prefecture';
-
 // Utils
 import { BuildChartData } from '@utils/chart';
 
@@ -27,12 +24,14 @@ export default async function ChartViewer() {
     populationService.fetchCompositionByPrefs(prefCodes)
   ]);
   const filteredPrefectures = prefectures.filter(p => prefCodes.includes(p.prefCode));
+  
   const chartItems = BuildChartData('年少人口', compositions, filteredPrefectures);
+  console.log(chartItems);
 
   return (
     <div className={styles.chartViewer}>
       <Suspense fallback={<ChartViewerSkeleton />}>
-        <Chart items={chartItems}/>
+        <Chart items={chartItems} prefectures={filteredPrefectures}/>
       </Suspense>
     </div>
   )
