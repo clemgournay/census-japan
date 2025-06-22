@@ -1,0 +1,12 @@
+@use './styles/reset.scss' as *;
+@use './styles/theme.scss' as *;
+
+main {
+  padding-top: calc($headerHeight + 20px);
+  max-width: 1000px;
+  margin: auto;
+
+  h2 {
+    color: $primaryColor;
+  }
+}

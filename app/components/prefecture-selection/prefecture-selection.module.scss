@@ -1,0 +1,19 @@
+@use '../../styles/theme.scss' as *;
+
+.card {
+  padding: 20px;
+  background: $backgroundColor;
+  border-radius: $borderRadius;
+
+  .title {
+    display: flex;
+    height: 50px;
+    align-items: center;
+  }
+
+  .prefectures {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}

@@ -1,0 +1,17 @@
+@import '../../styles/theme.scss';
+
+.button {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0px 20px;
+  background: whitesmoke;
+
+  &.primary {
+    background: $primaryColor;
+    border-radius: 10px;
+    border: none;
+  }
+}
