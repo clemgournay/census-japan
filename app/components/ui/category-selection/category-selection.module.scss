@@ -1,0 +1,58 @@
+@import '../../../styles/theme.scss';
+
+.group {
+  position: absolute;
+  right: 30px;
+  top: 5px;
+  height: 30px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  padding: 5px;
+  
+  .categories {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    .category {
+      position: relative;
+      flex: 1 1 auto;
+      padding: 0px 10px;
+      cursor: pointer;
+      height: 50px;
+      color: rgb(126, 126, 126);
+
+      &:after {
+        content: '';
+        border-right: 1px solid rgb(223, 223, 223);
+        position: absolute;
+        right: 0;
+        top: 10px;
+        width: 1px;
+        height: 30px;
+      }
+
+      &:last-child {
+        &:after {
+          display: none;
+        }
+      }
+
+      &:hover {
+        color: $primaryColor;
+      }
+
+      &.active {
+        background: $primaryColor;
+        pointer-events: none;
+        color: black;
+        border-radius: 10px;
+        border-right: none;
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+}

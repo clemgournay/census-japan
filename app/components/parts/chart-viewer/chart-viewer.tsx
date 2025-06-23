@@ -2,7 +2,8 @@
 import { Suspense } from 'react';
 
 // Components
-import Chart from '@components/chart/chart';
+import Chart from '@components/ui/chart/chart';
+import CategorySelection from '@components/ui/category-selection/category-selection';
 import ChartViewerSkeleton from './chart-viewer-skeleton';
 
 // Services
@@ -17,9 +18,10 @@ import styles from './chart-viewer.module.scss';
 
 type Props = {
   prefCodes: Array<number>;
+  category: string;
 }
 
-export default async function ChartViewer({prefCodes}: Props) {
+export default async function ChartViewer({prefCodes, category}: Props) {
   const prefectureService = new PrefectureService();
   const populationService = new PopulationService();
   const [prefectures, compositions] = await Promise.all([
@@ -27,13 +29,15 @@ export default async function ChartViewer({prefCodes}: Props) {
     populationService.fetchCompositionByPrefs(prefCodes)
   ]);
   const filteredPrefectures = prefectures.filter(p => prefCodes.includes(p.prefCode));
-  
-  const chartItems = BuildChartData('年少人口', compositions, filteredPrefectures);
-  console.log(chartItems);
+
+  const chartItems = BuildChartData(category, compositions, filteredPrefectures);
 
   return (
     <div className={styles.chartViewer}>
-      <h3 className={styles.title}>都道府県ごとの人口</h3>
+      <div className={styles.title}>
+        <h3>都道府県ごとの{category}</h3>
+        <CategorySelection category={category}/>
+      </div>
       <div className={styles.chart}>
         <Suspense fallback={<ChartViewerSkeleton />}>
           <Chart items={chartItems} prefectures={filteredPrefectures}/>

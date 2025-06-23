@@ -2,7 +2,7 @@
  
 import { useEffect, useState } from 'react';
 import { faSync } from '@fortawesome/free-solid-svg-icons';
-import Button from '@components/button/button';
+import Button from '@components/ui/button/button';
 
 export default function Error({
   error,

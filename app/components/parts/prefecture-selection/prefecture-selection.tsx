@@ -1,5 +1,5 @@
 // Components
-import PrefectureButton from '@components/prefecture-button/prefecture-button';
+import PrefectureButton from '@components/ui/prefecture-button/prefecture-button';
 
 // Models
 import { Prefecture } from '@models/prefecture'
@@ -21,7 +21,9 @@ export default async function PrefectureSelection({prefCodes}: Props) {
 
   return (
     <div className={styles.card}>
-      <h3 className={styles.title}>都道府県選択</h3>
+      <div className={styles.title}>
+        <h3>都道府県選択</h3>
+      </div>
       <div className={styles.prefectures}>
         {prefectures.map((prefecture: Prefecture) => {
           return (
