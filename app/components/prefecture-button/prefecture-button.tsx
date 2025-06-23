@@ -12,26 +12,33 @@ import { ParsePrefs } from '@utils/parsing';
 
 type Props = {
   prefecture: Prefecture,
-  active?: boolean
+  active?: boolean,
+  disabled?: boolean;
 }
 
-export default function PrefectureButton({prefecture, active}: Props) {
+export default function PrefectureButton({prefecture, active, disabled}: Props) {
 
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const [activeState, setActiveState] = useState(false);
 
   const handleClick = () => {
-    setActiveState(!activeState);
-    const params = new URLSearchParams(searchParams);
-    const codes: Array<number > = ParsePrefs(params.get('prefs'));
-
-    const codeIndex = codes.indexOf(prefecture.prefCode);
-    if (codeIndex >= 0) codes.splice(codeIndex, 1);
-    else codes.push(prefecture.prefCode);
-    
-    if (codes.length > 0) params.set('prefs', codes.join(','));
-    redirect(`${pathname}?${decodeURIComponent(params.toString())}`);
+    if (!disabled) {
+      setActiveState(!activeState);
+      const params = new URLSearchParams(searchParams);
+      const codes: Array<number > = ParsePrefs(params.get('prefs'));
+      const codeIndex = codes.indexOf(prefecture.prefCode);
+      if (codeIndex >= 0) codes.splice(codeIndex, 1);
+      else codes.push(prefecture.prefCode);
+      
+      let path: string = pathname;
+      if (codes.length > 0) {
+        params.set('prefs', codes.join(','));
+        path = `${pathname}?${decodeURIComponent(params.toString())}`;
+      }
+      redirect(path);
+    }
+  
   }
 
   useEffect(() => {

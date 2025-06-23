@@ -25,7 +25,12 @@ export default async function PrefectureSelection({prefCodes}: Props) {
       <div className={styles.prefectures}>
         {prefectures.map((prefecture: Prefecture) => {
           return (
-            <PrefectureButton key={prefecture.prefCode} prefecture={prefecture} active={prefCodes.includes(prefecture.prefCode)}/>
+            <PrefectureButton 
+              key={prefecture.prefCode} 
+              prefecture={prefecture} 
+              active={prefCodes.includes(prefecture.prefCode)}
+              disabled={prefCodes.includes(prefecture.prefCode) && prefCodes.length === 1}
+            />
           )
         })}
       </div>

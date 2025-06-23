@@ -14,7 +14,7 @@ type Props = {
 
 export default async function Home({searchParams}: Props) {
   const params = await searchParams;
-  const prefCodes = params ? ParsePrefs(params.prefs) : [];
+  const prefCodes = params ? ParsePrefs(params.prefs) : [1];
   return (
     <main className={styles.main}>
       <Suspense fallback={<PrefectureSelectionSkeleton />}>
