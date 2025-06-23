@@ -30,9 +30,12 @@ export default async function ChartViewer() {
 
   return (
     <div className={styles.chartViewer}>
-      <Suspense fallback={<ChartViewerSkeleton />}>
-        <Chart items={chartItems} prefectures={filteredPrefectures}/>
-      </Suspense>
+      <h3 className={styles.title}>都道府県ごとの人口</h3>
+      <div className={styles.chart}>
+        <Suspense fallback={<ChartViewerSkeleton />}>
+          <Chart items={chartItems} prefectures={filteredPrefectures}/>
+        </Suspense>
+      </div>
     </div>
   )
 }

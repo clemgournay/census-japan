@@ -1,3 +1,6 @@
+// Components
+import PrefectureButton from '@components/prefecture-button/prefecture-button';
+
 // Models
 import { Prefecture } from '@models/prefecture'
 
@@ -18,7 +21,7 @@ export default async function PrefectureSelection() {
       <div className={styles.prefectures}>
         {prefectures.map((prefecture: Prefecture) => {
           return (
-            <div key={prefecture.prefCode} className={styles.prefecture}>{prefecture.prefName}</div>
+            <PrefectureButton key={prefecture.prefCode} prefecture={prefecture} />
           )
         })}
       </div>

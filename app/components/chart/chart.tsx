@@ -5,8 +5,7 @@ import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Responsi
 
 // Models
 import { ChartItem } from '@models/chart';
-import { Prefecture } from '@/app/models/prefecture';
-
+import { Prefecture } from '@models/prefecture';
 
 type Props = {
   items: Array<ChartItem>;
