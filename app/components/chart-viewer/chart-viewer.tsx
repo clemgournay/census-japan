@@ -15,8 +15,11 @@ import { BuildChartData } from '@utils/chart';
 // Styles
 import styles from './chart-viewer.module.scss';
 
-export default async function ChartViewer() {
-  const prefCodes = [1, 2];
+type Props = {
+  prefCodes: Array<number>;
+}
+
+export default async function ChartViewer({prefCodes}: Props) {
   const prefectureService = new PrefectureService();
   const populationService = new PopulationService();
   const [prefectures, compositions] = await Promise.all([

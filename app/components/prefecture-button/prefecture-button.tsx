@@ -8,7 +8,7 @@ import { Prefecture } from '@models/prefecture';
 
 // Styles
 import styles from './prefecture-button.module.scss';
-
+import { ParsePrefs } from '@utils/parsing';
 
 type Props = {
   prefecture: Prefecture,
@@ -24,11 +24,7 @@ export default function PrefectureButton({prefecture, active}: Props) {
   const handleClick = () => {
     setActiveState(!activeState);
     const params = new URLSearchParams(searchParams);
-    let codes: Array<number > = [];
-    if (params.get('prefs')) {
-      const codeStrings =  params.get('prefs')?.split(',');
-      if (codeStrings) codes = codeStrings.map(c => parseInt(c));
-    }
+    const codes: Array<number > = ParsePrefs(params.get('prefs'));
 
     const codeIndex = codes.indexOf(prefecture.prefCode);
     if (codeIndex >= 0) codes.splice(codeIndex, 1);
@@ -40,7 +36,7 @@ export default function PrefectureButton({prefecture, active}: Props) {
 
   useEffect(() => {
     if (active) setActiveState(true);
-  }, []);
+  }, [active]);
 
   return (
     <button type="button" className={`${styles.button} ${activeState ? styles.active : ''}`} onClick={handleClick}>{prefecture.prefName}</button>

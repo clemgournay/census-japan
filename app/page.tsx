@@ -4,14 +4,23 @@ import ChartViewer from '@components/chart-viewer/chart-viewer';
 
 import styles from './page.module.scss';
 import { Suspense } from 'react';
+import { ParsePrefs } from '@utils/parsing';
 
-export default function Home() {
+type Props = {
+  searchParams?: Promise<{
+    prefs?: string;
+  }>;
+}
+
+export default async function Home({searchParams}: Props) {
+  const params = await searchParams;
+  const prefCodes = params ? ParsePrefs(params.prefs) : [];
   return (
     <main className={styles.main}>
       <Suspense fallback={<PrefectureSelectionSkeleton />}>
-        <PrefectureSelection />
+        <PrefectureSelection prefCodes={prefCodes}/>
       </Suspense>
-      <ChartViewer />
+      <ChartViewer prefCodes={prefCodes}/>
     </main>
   );
 }

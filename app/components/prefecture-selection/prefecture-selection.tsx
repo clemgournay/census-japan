@@ -10,7 +10,11 @@ import { PrefectureService } from '@services/prefecture';
 // Styles
 import styles from './prefecture-selection.module.scss';
 
-export default async function PrefectureSelection() {
+type Props = {
+  prefCodes: Array<number>;
+}
+
+export default async function PrefectureSelection({prefCodes}: Props) {
   
   const prefectureService = new PrefectureService();
   const prefectures: Array<Prefecture> = await prefectureService.fetchAll();
@@ -21,7 +25,7 @@ export default async function PrefectureSelection() {
       <div className={styles.prefectures}>
         {prefectures.map((prefecture: Prefecture) => {
           return (
-            <PrefectureButton key={prefecture.prefCode} prefecture={prefecture} />
+            <PrefectureButton key={prefecture.prefCode} prefecture={prefecture} active={prefCodes.includes(prefecture.prefCode)}/>
           )
         })}
       </div>
