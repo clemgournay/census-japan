@@ -1,5 +1,25 @@
-@use './styles/reset.scss' as *;
-@use './styles/theme.scss' as *;
+// Colors
+:root {
+  --body-color-light: whitesmoke;
+  --body-color-dark: #191b2b;
+  --primary-bg-color-light: white;
+  --primary-bg-color-dark: #202231;
+  --secondary-bg-color-light: rgba(0, 0, 0, 0.05);
+  --secondary-bg-color-dark: rgba(255, 255, 255, 0.05);
+  --font-color-light: rgb(70, 70, 70);
+  --font-color-dark: rgb(197, 197, 197);
+  --border-color-light: #e6e6e6;
+  --border-color-dark: #3d3d3d;
+
+  --body-color: var(--body-color-light);
+  --primary-bg-color: var(--primary-bg-color-light);
+  --secondary-bg-color: var(--secondary-bg-color-light);
+  --font-color: var(--font-color-light);
+  --border-color: var(--border-color-light);
+}
+
+@import './styles/reset.scss';
+@import './styles/theme.scss';
 
 html, body {
 
