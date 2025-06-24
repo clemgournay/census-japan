@@ -1,10 +1,9 @@
-@use '../../../styles/theme.scss' as *;
+@import '../../../styles/theme.scss';
 
 .header {
   position: fixed;
   left: 0;
   top: 0;
-  background: white;
   width: 100%;
   height: $headerHeight;
   padding: 0px 20px;
@@ -13,6 +12,8 @@
   justify-content: center;
   align-items: center;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.05);
+  background: $primaryBgColor;
+  border-bottom: $border;
 
   .logo {
     img {
@@ -30,6 +31,56 @@
     }
     .secondary {
       color: $secondaryColor;
+    }
+  }
+
+  .toggle {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 40px;
+    top: 10px;
+    background: $secondaryBgColor;
+    height: 50px;
+    border-radius: 50px;
+    color: $fontColor;
+    overflow: hidden;
+    padding: 5px;
+
+    .btn {
+      display: flex;
+      gap: 5px;
+      justify-content: center;
+      align-items: center;
+      padding: 0px 10px;
+      height: 100%;
+      cursor: pointer;
+      border-radius: 50px;
+
+      &:hover {
+        color: $secondaryColor;
+      }
+
+      &.active {
+        background: $secondaryColor;
+        color: white;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    justify-content: start;
+    .title {
+      font-size: 34px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      line-height: 1;
+    }
+    .toggle {
+      right: 5px;
     }
   }
 }

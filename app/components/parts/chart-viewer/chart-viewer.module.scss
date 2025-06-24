@@ -14,5 +14,7 @@
 @media screen and (max-width: 768px) {
   .viewer {
     width: 100%;
+    height: calc(100% - 100px);
+    overflow: auto;
   }
 }

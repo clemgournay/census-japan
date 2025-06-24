@@ -2,7 +2,9 @@
 @use './styles/theme.scss' as *;
 
 html, body {
+
   background: $bodyColor;
+
   main {
 
     h2 {

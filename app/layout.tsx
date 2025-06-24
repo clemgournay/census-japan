@@ -1,6 +1,12 @@
 import type { Metadata } from 'next';
-import './globals.scss';
+
+// Components
 import Header from '@components/parts/header/header';
+
+// Styles
+import './globals.scss';
+
+// Fonts
 import { NOTO_SANS_JP } from './fonts';
 
 export const metadata: Metadata = {
