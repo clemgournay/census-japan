@@ -10,9 +10,10 @@ import { Prefecture } from '@models/prefecture';
 type Props = {
   items: Array<ChartItem>;
   prefectures: Array<Prefecture>;
+  colors: Array<string>;
 }
 
-export default function Chart({items, prefectures}: Props) {
+export default function Chart({items, prefectures, colors}: Props) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -24,7 +25,7 @@ export default function Chart({items, prefectures}: Props) {
   }
 
   return (
-    <ResponsiveContainer width="100%" height={500}>
+    <ResponsiveContainer width="100%" height="100%">
       <LineChart
         width={1000}
         height={1000}
@@ -41,12 +42,12 @@ export default function Chart({items, prefectures}: Props) {
         <YAxis />
         <Tooltip />
         <Legend />
-        {prefectures.map((prefecture: Prefecture) => {
+        {prefectures.map((prefecture: Prefecture, i: number) => {
           return (
             <Line key={prefecture.prefCode}
               type="monotone"
               dataKey={`pref${prefecture.prefCode}`}
-              stroke="#8884d8"
+              stroke={colors[i]}
               name={prefecture.prefName}
               activeDot={{r: 8}}
             />

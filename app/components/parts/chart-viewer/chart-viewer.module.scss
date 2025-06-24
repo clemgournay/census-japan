@@ -1,19 +1,18 @@
 @import '../../../styles/theme.scss';
+@import '../../../styles/card.scss';
 
-.chartViewer {
-  background: $backgroundColor;
-  border-radius: $borderRadius;
-  box-shadow: $cardShadow;
-  min-height: 500px;
+.viewer {
+  width: calc(100% - $prefSelectionWidth);
 
-  .title {
-    position: relative;
-    height: 50px;
-    line-height: 50px;
-    padding: 0px 20px;
-  }
   .chart {
+    height: calc(100% - 50px);
     padding: 20px;
     padding-top: 0px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .viewer {
+    width: 100%;
   }
 }

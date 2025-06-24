@@ -1,11 +1,16 @@
-$headerHeight: 70px;
-
+// Colors
 $bodyColor: whitesmoke;
 $backgroundColor: white;
 //$primaryColor: rgb(0, 255, 157);
 $primaryColor: rgb(0, 218, 127);
+$secondaryColor: #00dad8;
+$fontColor: rgb(70, 70, 70);
 
+// Element styles
 $cardShadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
 $borderRadius: 20px;
+$border: 1px solid #e9e9e9;
 
-
+// Sizing
+$headerHeight: 70px;
+$prefSelectionWidth: 400px;

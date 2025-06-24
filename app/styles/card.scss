@@ -1,0 +1,19 @@
+@import './theme.scss';
+
+.card {
+  background: $backgroundColor;
+  border-radius: $borderRadius;
+  box-shadow: $cardShadow;
+
+  .title {
+    position: relative;
+    display: flex;
+    gap: 10px;
+    height: 50px;
+    padding: 0px 20px;
+    align-items: center;
+    border-bottom: $border;
+    font-size: 20px;
+    color: $primaryColor;
+  }
+}

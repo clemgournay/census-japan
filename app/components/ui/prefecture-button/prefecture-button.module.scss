@@ -8,19 +8,24 @@
   background: rgba(0, 0, 0, 0.05);
   height: 30px;
   border-radius: 10px;
-  width: 150px;
+  width: calc(50% - 10px);
   cursor: pointer;
   border: none;
   outline: none;
+  color: $fontColor;
+  font-size: 18px;
 
   &:hover {
-    color: $primaryColor;
+    color: $secondaryColor;
+    font-size: 20px;
   }
 
   &.active {
-    background: $primaryColor;
+    background: $secondaryColor;
+    color: white;
+    font-size: 20px;
     &:hover {
-      color: black;
+      color: white;
     }
   }
 }

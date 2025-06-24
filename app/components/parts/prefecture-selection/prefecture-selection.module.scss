@@ -1,15 +1,14 @@
-@use '../../../styles/theme.scss' as *;
+@import '../../../styles/theme.scss';
+@import '../../../styles/card.scss';
 
-.card {
-  background: $backgroundColor;
-  border-radius: $borderRadius;
-  box-shadow: $cardShadow;
+.selection {
+  width: $prefSelectionWidth;
+  overflow: auto;
 
   .title {
-    display: flex;
-    height: 50px;
-    padding: 0px 20px;
-    align-items: center;
+    .toggle {
+      display: none;
+    }
   }
 
   .prefectures {
@@ -21,11 +20,40 @@
     padding-top: 20px;
     
     .prefecture {
-      padding: 0px 20px;
       background: rgba(0, 0, 0, 0.05);
+      width: calc(50% - 10px);
       height: 30px;
+      padding: 0px 20px;
       border-radius: 10px;
-      width: 150px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .selection {
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    width: calc(100% - 20px);
+    height: 100%;
+    transform: translate3d(-50%, 90%, 0);
+    box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1);
+
+    &.deployed {
+      transform: translate3d(-50%, 70px, 0);
+    }
+
+    .title {
+      .toggle {
+        position: absolute;
+        display: block;
+        top: 0;
+        right: 20px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
     }
   }
 }

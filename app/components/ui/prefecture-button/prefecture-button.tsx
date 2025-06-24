@@ -46,6 +46,12 @@ export default function PrefectureButton({prefecture, active, disabled}: Props) 
   }, [active]);
 
   return (
-    <button type="button" className={`${styles.button} ${activeState ? styles.active : ''}`} onClick={handleClick}>{prefecture.prefName}</button>
+    <button 
+      type="button" 
+      className={`${styles.button} ${activeState ? styles.active : ''}`} 
+      onClick={handleClick}
+    >
+      <span>{prefecture.prefName}</span>
+    </button>
   )
 }

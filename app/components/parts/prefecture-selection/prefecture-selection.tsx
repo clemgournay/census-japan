@@ -1,3 +1,5 @@
+import { faChevronUp, faSquare, faSquareCheck } from '@fortawesome/free-solid-svg-icons';
+
 // Components
 import PrefectureButton from '@components/ui/prefecture-button/prefecture-button';
 
@@ -9,10 +11,11 @@ import { PrefectureService } from '@services/prefecture';
 
 // Styles
 import styles from './prefecture-selection.module.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 type Props = {
   prefCodes: Array<number>;
-}
+};
 
 export default async function PrefectureSelection({prefCodes}: Props) {
   
@@ -20,9 +23,13 @@ export default async function PrefectureSelection({prefCodes}: Props) {
   const prefectures: Array<Prefecture> = await prefectureService.fetchAll();
 
   return (
-    <div className={styles.card}>
+    <div className={`${styles.card} ${styles.selection}`}>
       <div className={styles.title}>
+        <FontAwesomeIcon icon={faSquareCheck}/>
         <h3>都道府県選択</h3>
+        <div className={styles.toggle}>
+          <FontAwesomeIcon icon={faChevronUp} />
+        </div>
       </div>
       <div className={styles.prefectures}>
         {prefectures.map((prefecture: Prefecture) => {
