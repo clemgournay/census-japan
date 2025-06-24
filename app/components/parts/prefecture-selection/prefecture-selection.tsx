@@ -1,4 +1,4 @@
-import { faChevronUp, faSquare, faSquareCheck } from '@fortawesome/free-solid-svg-icons';
+import { faChevronUp, faSquareCheck } from '@fortawesome/free-solid-svg-icons';
 
 // Components
 import PrefectureButton from '@components/ui/prefecture-button/prefecture-button';
