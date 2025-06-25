@@ -1,10 +1,15 @@
 'use client';
 
+// Third-Party
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+
+// Components
+import ChartTooltip from '@components/ui/chart-tooltip/chart-tooltip';
 
 // Models
 import { ChartItem } from '@models/chart';
 import { Prefecture } from '@models/prefecture';
+import { FormatPopulation } from '@app/utils/parsing';
 
 type Props = {
   items: Array<ChartItem>;
@@ -29,8 +34,8 @@ export default function Chart({items, prefectures, colors}: Props) {
       >
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="name" padding={{left: 20, right: 20}} />
-        <YAxis />
-        <Tooltip />
+        <YAxis tickFormatter={(value: number) => FormatPopulation(value)} />
+        <Tooltip content={<ChartTooltip />} />
         <Legend />
         {prefectures.map((prefecture: Prefecture, i: number) => {
           return (
