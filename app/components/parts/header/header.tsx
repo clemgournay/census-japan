@@ -11,6 +11,7 @@ import styles from './header.module.scss';
 
 // Fonts
 import { GEMUNU_LIBRE } from '@app/fonts';
+import { ROOT_PROPERTIES } from '@app/data/styles';
 
 export default function Header() {
   const [theme, setTheme] = useState('light');
@@ -19,21 +20,12 @@ export default function Header() {
 
     const refreshTheme = (): void => {
       const root = document.documentElement;
-      const bodyColorDark = window.getComputedStyle(document.body).getPropertyValue('--body-color-dark');
-      const bodyColorLight = window.getComputedStyle(document.body).getPropertyValue('--body-color-light');
-      const primaryBgColorLight = window.getComputedStyle(document.body).getPropertyValue('--primary-bg-color-light');
-      const primaryBgColorDark = window.getComputedStyle(document.body).getPropertyValue('--primary-bg-color-dark');
-      const secondaryBgColorLight = window.getComputedStyle(document.body).getPropertyValue('--secondary-bg-color-light');
-      const secondaryBgColorDark = window.getComputedStyle(document.body).getPropertyValue('--secondary-bg-color-dark');
-      const fontColorLight = window.getComputedStyle(document.body).getPropertyValue('--font-color-light');
-      const fontColorDark = window.getComputedStyle(document.body).getPropertyValue('--font-color-dark');
-      const borderColorDark = window.getComputedStyle(document.body).getPropertyValue('--border-color-dark');
-      const borderColorLight = window.getComputedStyle(document.body).getPropertyValue('--border-color-light');
-      root.style.setProperty('--body-color', theme === 'light' ? bodyColorLight : bodyColorDark);
-      root.style.setProperty('--primary-bg-color', theme === 'light' ? primaryBgColorLight : primaryBgColorDark);
-      root.style.setProperty('--secondary-bg-color', theme === 'light' ? secondaryBgColorLight : secondaryBgColorDark);
-      root.style.setProperty('--font-color', theme === 'light' ? fontColorLight : fontColorDark);
-      root.style.setProperty('--border-color', theme === 'light' ? borderColorLight : borderColorDark);
+      const style = window.getComputedStyle(document.body);
+      for (const property of ROOT_PROPERTIES) {
+        const lightVal = style.getPropertyValue(`--${property}-light`);
+        const darkVal = style.getPropertyValue(`--${property}-dark`);
+        root.style.setProperty(`--${property}`, theme === 'light' ? lightVal : darkVal);
+      }
     }
 
     refreshTheme();
