@@ -1,10 +1,7 @@
 @import '../../../styles/theme.scss';
 
 .group {
-  position: absolute;
-  right: 20px;
-  top: 5px;
-  height: calc(100% - 10px);
+  height: 100%;
   background: $secondaryBgColor;
   border-radius: 10px;
   padding: 5px;
@@ -46,9 +43,14 @@
 }
 @media screen and (max-width: 768px) {
   .group {
-    position: fixed;
-    right: -100px;
-    height: 50px;
-    top: -100px;
+    height: auto;
+    .categories {
+      flex-wrap: wrap;
+      gap: 10px;
+      .category {
+        width: 50%;
+        height: 50px;
+      }
+    }
   }
 }

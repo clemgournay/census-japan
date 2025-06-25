@@ -1,0 +1,37 @@
+@import '../../../styles/theme.scss';
+@import '../../../styles/card.scss';
+
+.card {
+  width: calc(100% - $prefCardWidth);
+
+  .title {
+    .controls {
+      position: absolute;
+      right: 20px;
+      top: 5px;
+      height: calc(100% - 10px);
+    }
+  }
+  .content {
+    .chart {
+      width: 100%;
+      height: 100%;
+      background: $skeletonColor;
+      border-radius: 10px;
+    }
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    width: 100%;
+    height: calc(100% - 70px);
+    overflow: auto;
+    .title {
+      .controls {
+        display: none;
+      }
+    }
+  }
+}

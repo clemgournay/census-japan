@@ -1,11 +1,20 @@
-import PrefectureSelection from '@components/parts/prefecture-selection/prefecture-selection';
-import PrefectureSelectionSkeleton from '@components/parts/prefecture-selection/prefecture-selection-skeleton';
-import ChartViewer from '@components/parts/chart-viewer/chart-viewer';
-
-import styles from './page.module.scss';
 import { Suspense } from 'react';
-import { ParsePrefs } from '@utils/parsing';
+
+// Components
+import PrefectureCard from '@components/parts/prefecture-card/prefecture-card';
+import PrefectureCardSkeleton from '@components/parts/prefecture-card/prefecture-card-skeleton';
+import ChartCard from '@components/parts/chart-card/chart-card';
+import ChartCardSkeleton from '@components/parts/chart-card/chart-card-skeleton';
+
+// Styles
+import styles from './page.module.scss';
+
+// Data
 import { CATEGORIES } from '@data/categories';
+
+// Utils
+import { ParsePrefs } from '@utils/parsing';
+import FilterCardWrapper from './components/parts/filter-card-wrapper/filter-card-wrapper';
 
 
 type Props = {
@@ -21,10 +30,13 @@ export default async function Home({searchParams}: Props) {
   const category = params && params.category ? params.category : CATEGORIES[0];
   return (
     <main className={styles.main}>
-      <Suspense fallback={<PrefectureSelectionSkeleton />}>
-        <PrefectureSelection prefCodes={prefCodes}/>
+      <Suspense fallback={<PrefectureCardSkeleton />}>
+        <PrefectureCard prefCodes={prefCodes}/>
       </Suspense>
-      <ChartViewer prefCodes={prefCodes} category={category}/>
+      <Suspense fallback={<ChartCardSkeleton />}>
+        <ChartCard prefCodes={prefCodes} category={category} />
+      </Suspense>
+      <FilterCardWrapper prefCodes={prefCodes} category={category}/>
     </main>
   );
 }

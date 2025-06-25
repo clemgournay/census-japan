@@ -1,6 +1,5 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 // Models
@@ -14,15 +13,6 @@ type Props = {
 }
 
 export default function Chart({items, prefectures, colors}: Props) {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  if (!mounted) {
-    return null;
-  }
 
   return (
     <ResponsiveContainer width="100%" height="100%">

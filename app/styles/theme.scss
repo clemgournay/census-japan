@@ -3,15 +3,16 @@ $primaryBgColor: var(--primary-bg-color);
 $secondaryBgColor: var(--secondary-bg-color);
 $borderColor: var(--border-color);
 $fontColor: var(--font-color);
+$skeletonColor: rgba(0, 0, 0, 0.01);
 
 $primaryColor: rgb(0, 218, 127);
 $secondaryColor: #00dad8;
 
 // Element styles
 $cardShadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
-$borderRadius: 20px;
+$cardRadius: 20px;
 $border: 1px solid $borderColor;
 
 // Sizing
 $headerHeight: 70px;
-$prefSelectionWidth: 400px;
+$prefCardWidth: 400px;

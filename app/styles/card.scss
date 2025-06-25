@@ -2,7 +2,7 @@
 
 .card {
   background: $primaryBgColor;
-  border-radius: $borderRadius;
+  border-radius: $cardRadius;
   box-shadow: $cardShadow;
 
   .title {
@@ -15,5 +15,17 @@
     border-bottom: $border;
     font-size: 20px;
     color: $primaryColor;
+  }
+  .content {
+    padding: 20px;
+    height: calc(100% - 50px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    .content {
+      padding: 10px;
+    }
   }
 }
