@@ -72,6 +72,7 @@
 @media screen and (max-width: 768px) {
   .header {
     justify-content: start;
+    padding: 0px 10px;
     .title {
       font-size: 34px;
       display: flex;
@@ -80,7 +81,7 @@
       line-height: 1;
     }
     .toggle {
-      right: 5px;
+      right: 10px;
     }
   }
 }

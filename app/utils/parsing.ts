@@ -21,6 +21,7 @@ export const FormatPopulation = (population: number): string => {
       result = replaced + separators[i] + result;
     }
   }
-  return `${result}人`;
+  if (result === '') result = '0';
+  return `${result}`;
 
 }

@@ -22,7 +22,7 @@ export default function ChartTooltip({payload, label, active}: TooltipProps<Valu
             return (
               <div className={styles.row} style={{color: p.stroke}} key={i}>
                 <div className={styles.label}>{p.name}:</div>
-                <div className={styles.value}>{p.value ? FormatPopulation(parseInt(p.value.toString())) : ''}</div>
+                <div className={styles.value}>{p.value ? FormatPopulation(parseInt(p.value.toString())) + '人' : ''}</div>
               </div>
             )
           })}

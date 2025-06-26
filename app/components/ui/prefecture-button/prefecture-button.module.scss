@@ -14,11 +14,10 @@
   outline: none;
   color: $fontColor;
   font-size: 18px;
-  border: 1px solid transparent;
+  border: $border;
 
   &:hover {
     color: $secondaryColor;
-    font-size: 20px;
     border-color: $secondaryColor;
   }
 

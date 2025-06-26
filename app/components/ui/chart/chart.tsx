@@ -25,12 +25,7 @@ export default function Chart({items, prefectures, colors}: Props) {
         width={1000}
         height={1000}
         data={items}
-        margin={{
-          top: 5,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
+        margin={{ top: 0, left: 5, right: 0, bottom: 0 }}
       >
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="name" padding={{left: 20, right: 20}} />

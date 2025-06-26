@@ -21,6 +21,11 @@
     height: calc(100% - 50px);
     overflow-x: hidden;
     overflow-y: auto;
+
+    h4 {
+      height: 30px;
+      font-size: 18px;
+    }
   }
 }
 
