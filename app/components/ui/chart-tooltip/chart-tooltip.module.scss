@@ -1,16 +1,16 @@
-@import '../../../styles/theme.scss';
+@use '../../../styles/theme.scss' as theme;
 
 .tooltip {
-  background: $transparentBgColor;
+  background: theme.$transparentBgColor;
   border-radius: 10px;
   backdrop-filter: blur(5px);
-  border: $border;
+  border: theme.$border;
   overflow: hidden;
 
   .year {
     height: 30px;
     line-height: 30px;
-    background: $secondaryColor;
+    background: theme.$secondaryColor;
     color: white;
     padding: 0px 10px;
     text-align: center;
@@ -33,7 +33,7 @@
       }
       .value {
         width: calc(100% - 80px);
-        color: $fontColor;
+        color: theme.$fontColor;
         text-align: right;
       }
     }

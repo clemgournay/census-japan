@@ -1,9 +1,14 @@
+@use 'node_modules/@fortawesome/fontawesome-svg-core/styles.css';
+
+@use './styles/theme.scss' as theme;
+@use './styles/reset.scss';
+
 // Colors
 :root {
   --body-color-light: whitesmoke;
   --body-color-dark: #191b2b;
   --primary-bg-color-light: white;
-  --primary-bg-color-dark: #202231;
+  --primary-bg-color-dark: #252736;
   --secondary-bg-color-light: rgba(0, 0, 0, 0.05);
   --secondary-bg-color-dark: rgba(255, 255, 255, 0.05);
   --transparent-bg-color-light: rgba(255, 255, 255, 0.4);
@@ -21,28 +26,24 @@
   --border-color: var(--border-color-light);
 }
 
-@import './styles/reset.scss';
-@import './styles/theme.scss';
-@import '@fortawesome/fontawesome-svg-core/styles.css';
-
 
 html, body {
 
-  background: $bodyColor;
+  background: theme.$bodyColor;
 
   main {
 
     h2 {
-      color: $primaryColor;
+      color: theme.$primaryColor;
       text-align: center;
     }
 
     h3 {
-      color: $primaryColor;
+      color: theme.$primaryColor;
     }
 
     h4 {
-      color: $secondaryColor;
+      color: theme.$secondaryColor;
     }
 
   }

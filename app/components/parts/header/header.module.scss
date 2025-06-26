@@ -1,19 +1,19 @@
-@import '../../../styles/theme.scss';
+@use '../../../styles/theme.scss';
 
 .header {
   position: fixed;
   left: 0;
   top: 0;
   width: 100%;
-  height: $headerHeight;
+  height: theme.$headerHeight;
   padding: 0px 20px;
   display: flex;
   gap: 10px;
   justify-content: center;
   align-items: center;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.05);
-  background: $primaryBgColor;
-  border-bottom: $border;
+  background: theme.$primaryBgColor;
+  border-bottom: theme.$border;
 
   .logo {
     img {
@@ -27,10 +27,10 @@
     gap: 10px;
     font-size: 46px;
     .primary {
-      color: $primaryColor;
+      color: theme.$primaryColor;
     }
     .secondary {
-      color: $secondaryColor;
+      color: theme.$secondaryColor;
     }
   }
 
@@ -40,10 +40,10 @@
     position: absolute;
     right: 40px;
     top: 10px;
-    background: $secondaryBgColor;
+    background: theme.$secondaryBgColor;
     height: 50px;
     border-radius: 50px;
-    color: $fontColor;
+    color: theme.$fontColor;
     overflow: hidden;
     padding: 5px;
 
@@ -58,11 +58,11 @@
       border-radius: 50px;
 
       &:hover {
-        color: $secondaryColor;
+        color: theme.$secondaryColor;
       }
 
       &.active {
-        background: $secondaryColor;
+        background: theme.$secondaryColor;
         color: white;
       }
     }
@@ -73,15 +73,21 @@
   .header {
     justify-content: start;
     padding: 0px 10px;
+
+    .toggle {
+      right: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .header {
     .title {
       font-size: 34px;
       display: flex;
       flex-direction: column;
       gap: 0;
       line-height: 1;
-    }
-    .toggle {
-      right: 10px;
     }
   }
 }

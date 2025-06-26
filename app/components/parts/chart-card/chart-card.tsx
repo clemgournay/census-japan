@@ -39,12 +39,14 @@ export default async function ChartViewer({prefCodes, category}: Props) {
       <div className={styles.title}>
         <FontAwesomeIcon icon={faChartColumn}></FontAwesomeIcon>
         <h3>各都道府県の{category}</h3>
+      </div>
+      <div className={`${styles.content}`}>
         <div className={styles.controls}>
           <CategorySelection category={category}/>
         </div>
-      </div>
-      <div className={`${styles.content}`}>
-        <Chart items={chartItems} prefectures={filteredPrefectures} colors={colors}/>
+        <div className={styles.chart}>
+          <Chart items={chartItems} prefectures={filteredPrefectures} colors={colors}/>
+        </div>
       </div>
     </div>
   )

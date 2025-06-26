@@ -1,19 +1,39 @@
-@import './styles/theme.scss';
-@import './styles/card.scss';
+@use './styles/theme.scss' as theme;
+@use './styles/card.scss';
 
 .main {
   display: flex;
   gap: 40px;
   padding: 40px;
-  padding-top: calc($headerHeight + 40px);
+  padding-top: calc(theme.$headerHeight + 40px);
   height: 100%;
 }
 
+// Smartphone
+@media screen and (max-width: 1200px) {
+  .main {
+    padding: 10px;
+    gap: 20px;
+    padding-top: calc(theme.$headerHeight + 10px);
+  }
+}
+
+
+// Smartphone
 @media screen and (max-width: 768px) {
   .main {
     padding: 10px;
-    padding-top: calc($headerHeight + 10px);
+    padding-top: calc(theme.$headerHeight + 10px);
     flex-direction: column;
     overflow: auto;
+  }
+}
+
+// Smartphone, landscape
+@media screen and (orientation: landscape) and (max-height: 768px) {
+  .main {
+    gap: 10px;
+    padding: 10px;
+    padding-top: 80px;
   }
 }

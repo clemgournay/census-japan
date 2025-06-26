@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='ja' className={`${NOTO_SANS_JP.className}`}>
+    <html lang='ja' className={`${NOTO_SANS_JP.className}`} style={{overscrollBehavior: 'contain'}}>
       <body>
         <Header />
         {children}

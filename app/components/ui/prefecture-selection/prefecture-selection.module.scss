@@ -1,5 +1,5 @@
-@import '../../../styles/theme.scss';
-@import '../../../styles/card.scss';
+@use '../../../styles/theme.scss' as theme;
+@use '../../../styles/card.scss';
 
 
 .prefectures {
@@ -16,3 +16,4 @@
     border-radius: 10px;
   }
 }
+

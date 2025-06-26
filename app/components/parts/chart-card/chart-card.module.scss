@@ -1,34 +1,58 @@
-@import '../../../styles/theme.scss';
-@import '../../../styles/card.scss';
+@use '../../../styles/theme.scss' as theme;
+@use '../../../styles/card.scss';
 
 .card {
-  width: calc(100% - $prefCardWidth);
+  position: relative;
+  width: calc(100% - theme.$prefCardWidth);
 
-  .title {
+  .content {
     .controls {
       position: absolute;
       right: 20px;
       top: 5px;
-      height: calc(100% - 10px);
+      height: 40px;
     }
-  }
-  .content {
     .chart {
       width: 100%;
       height: 100%;
-      background: $skeletonColor;
+      background: theme.$skeletonColor;
       border-radius: 10px;
     }
   }
 
 }
 
+// Small width pc
+@media screen and (max-width: 1400px) {
+  .card {
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      .controls {
+        position: static;
+      }
+      .chart {
+        height: calc(100% - 50px);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .card {
+    width: calc(100% - (theme.$prefCardWidth/2));
+  }
+}
+
+// Mobiles
 @media screen and (max-width: 768px) {
   .card {
     width: 100%;
     height: calc(100% - 70px);
     overflow: auto;
-    .title {
+    
+    .content {
       .controls {
         display: none;
       }

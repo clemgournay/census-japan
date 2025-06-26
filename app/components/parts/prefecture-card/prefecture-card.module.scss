@@ -1,10 +1,15 @@
-@import '../../../styles/theme.scss';
-@import '../../../styles/card.scss';
+@use '../../../styles/theme.scss' as theme;
+@use '../../../styles/card.scss';
 
 .card {
-  width: $prefCardWidth;
+  width: theme.$prefCardWidth;
 }
 
+@media screen and (max-width: 1000px) {
+  .card {
+    width: calc(theme.$prefCardWidth/2);
+  }
+}
 
 @media screen and (max-width: 768px) {
   .card {

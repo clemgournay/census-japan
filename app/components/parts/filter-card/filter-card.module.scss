@@ -1,18 +1,18 @@
-@import '../../../styles/theme.scss';
-@import '../../../styles/card.scss';
+@use '../../../styles/theme.scss' as theme;
+@use '../../../styles/card.scss';
 
 .card {
   display: none;
   position: fixed;
   left: 50%;
-  top: $headerHeight + 10px;
+  top: theme.$headerHeight + 10px;
   width: calc(100% - 20px);
-  height: calc(100% - ($headerHeight + 20px));
+  height: calc(100% - (theme.$headerHeight + 20px));
   transform: translate3d(-50%, calc(100% - 60px), 0);
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease-out;
   z-index: 2;
-  border: 1px solid $secondaryColor;
+  border: 1px solid theme.$secondaryColor;
   
   &.deployed {
     transform: translate3d(-50%, 0, 0);

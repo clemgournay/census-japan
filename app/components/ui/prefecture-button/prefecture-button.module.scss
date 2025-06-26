@@ -1,32 +1,44 @@
-@import '../../../styles/theme.scss';
+@use '../../../styles/theme.scss' as theme;
 
 .button {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0px 20px;
-  background: $secondaryBgColor;
+  background: theme.$secondaryBgColor;
   height: 30px;
   border-radius: 10px;
   width: calc(50% - 5px);
   cursor: pointer;
   border: none;
   outline: none;
-  color: $fontColor;
+  color: theme.$fontColor;
   font-size: 18px;
-  border: $border;
+  border: theme.$border;
 
   &:hover {
-    color: $secondaryColor;
-    border-color: $secondaryColor;
+    color: theme.$secondaryColor;
+    border-color: theme.$secondaryColor;
   }
 
   &.active {
-    background: $secondaryColor;
+    background: theme.$secondaryColor;
     color: white;
     font-size: 20px;
     &:hover {
       color: white;
     }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .button {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .button {
+    width: calc(50% - 5px);
   }
 }

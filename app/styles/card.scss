@@ -1,9 +1,9 @@
-@import './theme.scss';
+@use './theme.scss';
 
 .card {
-  background: $primaryBgColor;
-  border-radius: $cardRadius;
-  box-shadow: $cardShadow;
+  background: theme.$primaryBgColor;
+  border-radius: theme.$cardRadius;
+  box-shadow: theme.$cardShadow;
 
   .title {
     position: relative;
@@ -12,9 +12,9 @@
     height: 50px;
     padding: 0px 20px;
     align-items: center;
-    border-bottom: $border;
+    border-bottom: theme.$border;
     font-size: 20px;
-    color: $primaryColor;
+    color: theme.$primaryColor;
   }
   .content {
     padding: 20px;
@@ -29,8 +29,22 @@
   }
 }
 
+@media screen and (max-width: 1000px) {
+  .card {
+    .title {
+      padding: 0px 10px;
+    }
+    .content {
+      padding: 10px;
+    }
+  }
+}
+
 @media screen and (max-width: 768px) {
   .card {
+    .title {
+      padding: 0px 10px;
+    }
     .content {
       padding: 10px;
     }
