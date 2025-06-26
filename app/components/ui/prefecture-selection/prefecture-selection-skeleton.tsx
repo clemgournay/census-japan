@@ -1,4 +1,4 @@
-
+// Styles
 import styles from './prefecture-selection.module.scss';
 
 export default async function PrefectureSelectionSkeleton() {

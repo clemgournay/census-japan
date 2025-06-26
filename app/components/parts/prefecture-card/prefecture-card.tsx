@@ -1,8 +1,12 @@
+// Third-Party
 import { faSquareCheck } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import styles from './prefecture-card.module.scss'
+// Components
 import PrefectureSelection from '@app/components/ui/prefecture-selection/prefecture-selection';
+
+// Styles
+import styles from './prefecture-card.module.scss'
 
 type Props = {
   prefCodes: Array<number>;

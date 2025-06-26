@@ -1,4 +1,4 @@
-@use '../../../styles/theme.scss' as *;
+@use '../../../styles/theme.scss' as theme;
 
 .button {
   display: flex;
@@ -8,10 +8,18 @@
   height: 40px;
   padding: 0px 20px;
   background: whitesmoke;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  margin: auto;
 
   &.primary {
-    background: $primaryColor;
+    background: theme.$secondaryColor;
     border-radius: 10px;
     border: none;
+
+    &:hover {
+      background: theme.$primaryColor;
+    }
   }
 }

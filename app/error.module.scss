@@ -1,0 +1,28 @@
+@use './styles/theme.scss' as theme;
+@use './styles/card.scss';
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 90px;
+
+  .card {
+    width: 100%;
+    max-width: 1000px;
+    text-align: center;
+
+    .title {
+      justify-content: center;
+    }
+    
+    .content {
+
+      .error {
+        font-size: 20px;
+        color: theme.$fontColor;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

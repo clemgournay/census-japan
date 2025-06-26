@@ -1,8 +1,15 @@
 'use client';
  
 import { useEffect, useState } from 'react';
+
+// Third-Party
 import { faSync } from '@fortawesome/free-solid-svg-icons';
+
+// Components
 import Button from '@components/ui/button/button';
+
+// Styles
+import styles from './error.module.scss';
 
 export default function Error({
   error,
@@ -17,10 +24,16 @@ export default function Error({
   }, [error]);
  
   return (
-    <main>
-      <h2>エラー</h2>
-      <p>{errorMsg}</p>
-      <Button icon={faSync} label={'再読み込み'} mode={'primary'} action={() => reset()} />
+    <main className={styles.main}>
+      <div className={styles.card}>
+        <div className={styles.title}>
+          <h2>エラー</h2>
+        </div>
+        <div className={styles.content}>
+          <p className={styles.error}>{errorMsg}</p>
+          <Button icon={faSync} label={'再読み込み'} mode={'primary'} action={() => reset()} />
+        </div>
+      </div>
     </main>
   );
 }

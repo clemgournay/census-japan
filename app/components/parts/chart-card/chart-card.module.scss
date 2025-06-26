@@ -15,14 +15,16 @@
     .chart {
       width: 100%;
       height: 100%;
-      background: theme.$skeletonColor;
       border-radius: 10px;
+      &.skeleton {
+        background: theme.$skeletonColor;
+      }
     }
   }
 
 }
 
-// Small width pc
+// Medium width device
 @media screen and (max-width: 1400px) {
   .card {
     .content {
@@ -33,12 +35,13 @@
         position: static;
       }
       .chart {
-        height: calc(100% - 50px);
+        height: calc(100% - 70px);
       }
     }
   }
 }
 
+// Small with device
 @media screen and (max-width: 1000px) {
   .card {
     width: calc(100% - (theme.$prefCardWidth/2));

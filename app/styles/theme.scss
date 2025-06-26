@@ -4,7 +4,7 @@ $secondaryBgColor: var(--secondary-bg-color);
 $transparentBgColor: var(--transparent-bg-color);
 $borderColor: var(--border-color);
 $fontColor: var(--font-color);
-$skeletonColor: rgba(0, 0, 0, 0.01);
+$skeletonColor: rgba(0, 0, 0, 0.05);
 
 $primaryColor: rgb(0, 218, 127);
 $secondaryColor: #00dad8;
@@ -17,3 +17,4 @@ $border: 1px solid $borderColor;
 // Sizing
 $headerHeight: 70px;
 $prefCardWidth: 400px;
+

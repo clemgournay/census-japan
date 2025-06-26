@@ -1,8 +1,11 @@
 'use client';
 
+// Third-Party
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import styles from './button.module.scss';
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
+
+// Styles
+import styles from './button.module.scss';
 
 type Props = {
   icon: IconDefinition,

@@ -8,6 +8,8 @@ import { Prefecture } from '@models/prefecture';
 
 // Styles
 import styles from './prefecture-button.module.scss';
+
+// Utils
 import { ParsePrefs } from '@utils/parsing';
 
 type Props = {
