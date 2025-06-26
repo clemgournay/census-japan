@@ -1,6 +1,7 @@
 @use './theme.scss';
 
 .card {
+  position: relative;
   background: theme.$primaryBgColor;
   border-radius: theme.$cardRadius;
   box-shadow: theme.$cardShadow;
@@ -15,12 +16,23 @@
     border-bottom: theme.$border;
     font-size: 20px;
     color: theme.$primaryColor;
+
   }
   .content {
     padding: 20px;
     height: calc(100% - 50px);
     overflow-x: hidden;
     overflow-y: auto;
+    
+    .controls {
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      display: flex;
+      gap: 5px;
+      padding: 5px 20px;
+      height: 50px;
+    }
 
     h4 {
       height: 30px;
@@ -29,6 +41,22 @@
   }
 }
 
+// Medium width device
+@media screen and (max-width: 1400px) {
+  .card {
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      .controls {
+        position: static;
+        padding: 0px;
+      }
+    }
+  }
+}
+
+// Small screen device
 @media screen and (max-width: 1000px) {
   .card {
     .title {
@@ -40,6 +68,7 @@
   }
 }
 
+// Mobiles
 @media screen and (max-width: 768px) {
   .card {
     .title {

@@ -45,6 +45,7 @@ export default function PrefectureButton({prefecture, active, disabled}: Props) 
 
   useEffect(() => {
     if (active) setActiveState(true);
+    else setActiveState(false);
   }, [active]);
 
   return (

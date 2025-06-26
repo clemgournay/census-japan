@@ -1,6 +1,7 @@
 @use '../../../styles/theme.scss' as theme;
 
 .group {
+  width: 100%;
   height: 100%;
   background: theme.$secondaryBgColor;
   border-radius: 10px;
@@ -41,7 +42,7 @@
   }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1400px) {
   .group {
     .categories {
       .category {

@@ -5,6 +5,18 @@
   width: theme.$prefCardWidth;
 }
 
+@media screen and (max-width: 1400px) {
+  .card {
+    .content {
+      .controls {
+        button {
+          flex: 1 1 auto;
+        }
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 1000px) {
   .card {
     width: calc(theme.$prefCardWidth/2);

@@ -1,8 +1,13 @@
 export const ParsePrefs = (prefs: string | null | undefined): Array<number> => {
-  let codes: Array<number> = [1];
+  let codes: Array<number> = [13];
   if (prefs) {
-    const codeStrings: Array<string> = prefs.split(',');
-    codes = codeStrings.map(c => parseInt(c));
+    if (prefs === 'all') {
+      codes = [];
+      for (let i = 1; i <= 47; i++) codes.push(i);
+    } else {
+      const codeStrings: Array<string> = prefs.split(',');
+      codes = codeStrings.map(c => parseInt(c));
+    }
   }
   return codes;
 }

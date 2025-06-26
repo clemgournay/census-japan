@@ -9,16 +9,19 @@ import styles from './button.module.scss';
 
 type Props = {
   icon: IconDefinition,
-  label: string;
+  label?: string;
   mode?: string;
   action: () => void;                                    
 }
 
 export default function Button({icon, label, mode, action}: Props) {
   return (
-    <button className={`${styles.button} ${mode === 'primary' ? styles.primary : ''}`} onClick={() => action()}>
+    <button 
+      className={`${styles.button} ${mode === 'primary' ? styles.primary : ''}`} 
+      onClick={() => action()}
+    >
       <FontAwesomeIcon icon={icon}></FontAwesomeIcon>
-      <span>{label}</span>
+      {label && (<span>{label}</span>)}
     </button>
   )
 }

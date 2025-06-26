@@ -1,5 +1,15 @@
 .filters {
   .filter {
     margin-bottom: 20px;
+
+    .controls {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+
+      button {
+        flex: 1 1 auto;
+      }
+    }
   }
 }

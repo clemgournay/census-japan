@@ -7,16 +7,22 @@
   justify-content: center;
   height: 40px;
   padding: 0px 20px;
-  background: whitesmoke;
-  color: white;
+  background: theme.$secondaryBgColor;
   font-size: 20px;
   cursor: pointer;
   margin: auto;
+  outline: none;
+  border: 1px solid theme.$secondaryColor;
+  border-radius: 10px; 
+  color: theme.$fontColor;
+
+  &:hover {
+    color: theme.$secondaryColor;
+  }
 
   &.primary {
     background: theme.$secondaryColor;
-    border-radius: 10px;
-    border: none;
+    color: white;
 
     &:hover {
       background: theme.$primaryColor;
