@@ -9,6 +9,9 @@ import { Prefecture } from '@models/prefecture';
 // Styles
 import styles from './prefecture-button.module.scss';
 
+// Fonts
+import { NOTO_SANS_JP } from '@app/fonts';
+
 // Utils
 import { ParsePrefs } from '@utils/parsing';
 
@@ -51,7 +54,7 @@ export default function PrefectureButton({prefecture, active, disabled}: Props) 
   return (
     <button 
       type="button" 
-      className={`${styles.button} ${activeState ? styles.active : ''}`} 
+      className={`${styles.button} ${activeState ? styles.active : ''} ${NOTO_SANS_JP.className}`} 
       onClick={handleClick}
     >
       <span>{prefecture.prefName}</span>

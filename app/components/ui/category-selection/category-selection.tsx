@@ -7,6 +7,9 @@ import { CATEGORIES } from '@data/categories';
 // Styles
 import styles from './category-selection.module.scss';
 
+// Fonts
+import { NOTO_SANS_JP } from '@app/fonts';
+
 type Props = {
   category: string;
 };
@@ -27,11 +30,11 @@ export default function CategorySelection({category}: Props) {
       <div className={styles.categories}>
         {CATEGORIES.map((label: string, i: number) => {
           return (
-            <div 
+            <button 
               key={i} 
-              className={`${styles.category} ${label === category ? styles.active : ''}`} 
+              className={`${styles.category} ${label === category ? styles.active : ''} ${NOTO_SANS_JP.className}`} 
               onClick={() => handleClick(label)}
-            >{label}</div>
+            >{label}</button>
           )
         })}
       </div>
