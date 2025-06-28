@@ -38,7 +38,7 @@ export default function Header() {
           src="/logo.png"
           width={238}
           height={327}
-          alt="Logo"
+          alt="日本地図とグラフを丸で囲まれたロゴ"
         />
       </div>
       <h1 className={`${styles.title} ${GEMUNU_LIBRE.className}`}>

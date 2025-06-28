@@ -19,18 +19,27 @@ export default function Error({
   reset: () => void;
 }) {
   const [errorMsg, setErrorMsg] = useState<string>('');
+
+  const renderError = (message: string) => {
+    return message.split('\n').map((line: string, i: number) => {
+      return (<p key={i}>{line}</p>);
+    });
+  }
+
   useEffect(() => {
-    if (error.message) setErrorMsg(error.message);
+    if (error.message) {
+      setErrorMsg(error.message);
+    }
   }, [error]);
  
   return (
     <main className={styles.main}>
       <div className={styles.card}>
         <div className={styles.title}>
-          <h2>エラー</h2>
+          <h2>エラーが発生しました</h2>
         </div>
         <div className={styles.content}>
-          <p className={styles.error}>{errorMsg}</p>
+          <div className={styles.error}>{renderError(errorMsg)}</div>
           <Button icon={faSync} label={'再読み込み'} mode={'primary'} action={() => reset()} />
         </div>
       </div>

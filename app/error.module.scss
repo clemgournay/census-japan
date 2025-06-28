@@ -21,7 +21,8 @@
       .error {
         font-size: 20px;
         color: theme.$fontColor;
-        margin-bottom: 10px;
+        margin-bottom: 40px;
+        white-space: 'pre-wrap';
       }
     }
   }

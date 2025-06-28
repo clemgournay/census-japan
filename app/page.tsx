@@ -5,6 +5,7 @@ import PrefectureCard from '@components/parts/prefecture-card/prefecture-card';
 import PrefectureCardSkeleton from '@components/parts/prefecture-card/prefecture-card-skeleton';
 import ChartCard from '@components/parts/chart-card/chart-card';
 import ChartCardSkeleton from '@components/parts/chart-card/chart-card-skeleton';
+import FilterCardWrapper from '@components/parts/filter-card-wrapper/filter-card-wrapper';
 
 // Styles
 import styles from './page.module.scss';
@@ -14,7 +15,6 @@ import { CATEGORIES } from '@data/categories';
 
 // Utils
 import { ParsePrefs } from '@utils/parsing';
-import FilterCardWrapper from './components/parts/filter-card-wrapper/filter-card-wrapper';
 
 
 type Props = {

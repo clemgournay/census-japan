@@ -23,6 +23,7 @@
     height: calc(100% - 50px);
     overflow-x: hidden;
     overflow-y: auto;
+    min-height: 200px;
     
     .controls {
       position: absolute;

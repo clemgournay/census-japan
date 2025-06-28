@@ -18,12 +18,12 @@ export class PrefectureService {
         const data: ApiResp = await resp.json();
         return data.result;
       } else {
-        throw new Error(ERRORS.network);
+        throw new Error(`${ERRORS.network}`);
       }
-      
     } catch (e) {
-      console.error(e);
-      throw new Error(ERRORS.network);
+      let unknownError: string = '';
+      if (e instanceof Error) unknownError = e.message;
+      throw new Error(`${ERRORS.network}\n下記のエラーをご確認ください。\n\n${unknownError}`);
     }
   }
 
