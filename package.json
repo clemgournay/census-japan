@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "docs": "npx typedoc --entryPointStrategy Expand app --out ./public/docs --basePath ./docs",
+    "docs": "npx typedoc --entryPointStrategy Expand app --out ./public/docs --basePath /public/docs",
     "test": "cypress open"
   },
   "dependencies": {
