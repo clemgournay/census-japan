@@ -3,6 +3,7 @@
 Reactフレームワーク「Next」で開発したものになります。
 
 オンラインURL：[https://census-japan.vercel.app](https://census-japan.vercel.app)
+ドキュメンテーションURL：[https://census-japan.vercel.app](https://census-japan.vercel.app)
 
 本アプリの基となる指示：[フロントエンドコーディング試験](https://yumemi.notion.site/0e9ef27b55704d7882aab55cc86c999d)
 
@@ -113,4 +114,32 @@ pnpm docs
 bun docs
 ```
 
-### 参考
+## 今後の課題
+今回は効率の為にコミットした上でオンラインでビルド状態を確認していました為、いくつかのビルドエラー履歴が残ってしまいました。<br>
+次回
+
+## 参考
+
+###　Reactフレームワーク「Next」
+ホームページ: [https://nextjs.org/](https://nextjs.org/)
+
+### グラフライブラリ「Rechart」
+ホームページ: [https://recharts.org/](https://recharts.org/)
+
+### アイコンライブラリ「FontAwesome」
+ホームページ: [https://fontawesome.com/](https://fontawesome.com/)
+
+### CSS記述最適化ライブラリ「SASS」
+ホームページ: [https://sass-lang.com/](https://sass-lang.com/)
+
+### テスト実施ツール「Cypress」
+ホームページ: [https://www.cypress.io/](https://www.cypress.io/)
+
+### ドキュメンテーション作成ライブラリ「TypeDoc」
+ホームページ: [https://typedoc.org/](https://typedoc.org/)
+
+### コードレビューライブラリ「ESLint」
+ホームページ: [https://eslint.org/](https://eslint.org/)
+
+### 生成人工知能「ChatGPT」
+ホームページ: [https://chatgpt.com/](https://chatgpt.com/)
