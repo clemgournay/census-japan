@@ -2,10 +2,9 @@
 ゆめみフロントエンド試験の為に開発した日本の各都道府県をグラフで確認できるアプリです。<br/>
 Reactフレームワーク「Next」で開発したものになります。<br/>
 
-オンラインURL：[https://census-japan.vercel.app](https://census-japan.vercel.app)<br/>
-ドキュメンテーションURL：[https://census-japan.vercel.app](https://census-japan.vercel.app)<br/>
-<br/>
-本アプリの基となる指示：[フロントエンドコーディング試験](https://yumemi.notion.site/0e9ef27b55704d7882aab55cc86c999d)
+デプロイURL：[https://census-japan.vercel.app](https://census-japan.vercel.app)<br/>
+ドキュメンテーションURL：[https://census-japan.vercel.app/docs/](https://census-japan.vercel.app/docs/)<br/>
+基となる指示：[フロントエンドコーディング試験](https://yumemi.notion.site/0e9ef27b55704d7882aab55cc86c999d)
 
 ## プレビュー
 
@@ -119,7 +118,7 @@ bun docs
 
 ## 参考
 
-###　Reactフレームワーク「Next」
+### Reactフレームワーク「Next」
 ホームページ:<br/>
 [https://nextjs.org/](https://nextjs.org/)
 
