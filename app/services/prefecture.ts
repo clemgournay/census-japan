@@ -2,7 +2,6 @@ import { ApiResp } from '@models/api-resp'
 import { Prefecture } from '@models/prefecture'
 import { ERRORS } from '@errors/prefecture';
 import { GetApiOptions } from '@utils/config';
-import { Wait } from '@app/utils/time';
 
 export class PrefectureService {
 
