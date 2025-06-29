@@ -15,7 +15,6 @@ export class PrefectureService {
   async fetchAll(): Promise<Prefecture[]> {
     try {
       const resp: Response = await fetch(this.endpointURI, GetApiOptions());
-      await Wait(6000);
       if (resp.status === 200) {
         const data: ApiResp = await resp.json();
         return data.result;
